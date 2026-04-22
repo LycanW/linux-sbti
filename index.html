@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LSB-TI · Linux 发行版刻板印象测验</title>
+    <meta
+      name="description"
+      content="仿 SBTI 结构的 Linux 发行版娱乐测验——刻板印象拉满，结果仅供玩梗。"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <section id="intro" class="screen active">
+        <header class="card hero">
+          <div class="eyebrow">不是 SBTi · 是 LSB-TI</div>
+          <h1>LSB-TI</h1>
+          <p class="sub">
+            Linux Stereotype Battery · Type Indicator。十五维向量 + 刻板印象题库 + 与主流发行版原型匹配。纯前端，无后端，无科学依据，只有 meme 与自嘲。
+          </p>
+          <div class="hero-grid">
+            <div class="mini-panel">
+              <h3>测什么</h3>
+              <ul>
+                <li>更新哲学、文档崇拜、企业气质、折腾能量……共 15 维。</li>
+                <li>覆盖 SteamOS、Debian、Deepin、Ubuntu、Mint、RHEL、CentOS、Fedora、Slackware、Arch、Manjaro、NixOS 等二十种原型。</li>
+                <li>另有「掌机/大屏游戏」彩蛋题，可能直接把你焊在 SteamOS 上。</li>
+              </ul>
+            </div>
+            <div class="mini-panel">
+              <h3>不保证</h3>
+              <ul>
+                <li>与任何发行版官方立场、社区政治、你的真实技术水平均无关。</li>
+                <li>若冒犯了你的 distro：那是刻板印象测试的出厂设置。</li>
+              </ul>
+            </div>
+          </div>
+          <div class="hero-actions">
+            <button type="button" class="btn-primary" id="startBtn">开始测试</button>
+          </div>
+        </header>
+      </section>
+
+      <section id="test" class="screen">
+        <div class="card test-wrap">
+          <div class="topbar">
+            <div class="progress" aria-hidden="true">
+              <span id="progressBar"></span>
+            </div>
+            <span id="progressText" class="progress-label">0 / 0</span>
+          </div>
+          <p id="testHint" class="hint">全选完才会放行。内核可以 panic，题不能不答完。</p>
+          <div id="questionList"></div>
+          <div class="test-actions">
+            <button type="button" class="btn-secondary" id="backIntroBtn">返回首页</button>
+            <button type="button" class="btn-primary" id="submitBtn" disabled>提交并查看结果</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="result" class="screen">
+        <div class="card result-wrap">
+          <div class="result-layout">
+            <div class="result-top">
+              <div class="poster-box" id="posterBox">
+                <img id="posterImage" class="poster-image" alt="" width="220" height="300" decoding="async" loading="eager" />
+                <div class="poster-fallback" id="posterFallback" aria-hidden="true">🐧</div>
+                <p class="poster-caption" id="posterCaption"></p>
+              </div>
+              <div class="type-box">
+                <div class="type-kicker" id="resultModeKicker">你的主类型</div>
+                <div class="type-name" id="resultTypeName"></div>
+                <div class="match" id="matchBadge"></div>
+                <p class="type-subname" id="resultTypeSub"></p>
+              </div>
+            </div>
+            <div class="analysis-box">
+              <h3>该发行版原型的刻板印象解说</h3>
+              <p id="resultDesc"></p>
+            </div>
+            <div class="dim-box">
+              <h3>十五维度评分</h3>
+              <div id="dimList" class="dim-list"></div>
+            </div>
+            <div class="note-box">
+              <h3>友情提示</h3>
+              <p id="funNote"></p>
+            </div>
+            <div id="top3Box" class="top3-list"></div>
+          </div>
+          <div class="result-actions">
+            <button type="button" class="btn-secondary" id="toTopBtn">回到首页</button>
+            <button type="button" class="btn-primary" id="restartBtn">重新测试</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- <footer class="footer-note">
+        本地预览：<code>python -m http.server</code>。部署见 <code>Dockerfile</code> 与 <code>deploy/README.md</code>。立绘为 PNG（16Personalities 式：几何低多边形、分面着色、无描边）。测验结构仿 SBTI 镜像，文案为玩梗。
+      </footer> -->
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
